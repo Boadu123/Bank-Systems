@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.banking_system.HelloController">
+    <VBox alignment="CENTER" spacing="20">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+        <TextField fx:id="accountNameField" promptText="Enter Full Name"/>
+        <TextField fx:id="initialDepositField" promptText="Enter Initial Deposit Amount"/>
+        <ComboBox fx:id="accountTypeComboBox">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Savings Account"/>
+                    <String fx:value="Current Account"/>
+                    <String fx:value="Fixed Deposit Account"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Button text="Create Account" onAction="#handleCreateAccount"/>
+        <Button text="Withdraw Money" onAction="#handleWithdrawMoney"/>
+        <Button text="Show Account Info" onAction="#handleShowInfo"/>
+        <TextArea fx:id="accountInfoArea" prefHeight="200" prefWidth="300"/>
+    </VBox>
+
+</AnchorPane>
