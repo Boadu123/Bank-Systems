@@ -14,6 +14,7 @@ abstract class BankAccount implements BankOperations {
         this.balance = balance;
     }
 
+//    Handles Deposit
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
@@ -34,10 +35,12 @@ abstract class BankAccount implements BankOperations {
         }
     }
 
+//    Insert transasctions into Linkedlist
     protected void logTransactions(String entry){
         transactionHistory.add(entry);
     }
 
+//    Print number of recent transactions
     public void viewLastNTransactions(int n){
         System.out.println("Last" + n + "transactions");
         int count = 0;
@@ -54,6 +57,7 @@ abstract class BankAccount implements BankOperations {
 
     public void withdrawal(double amount){}
 
+//    check for account balance
     public double accountBalance() {
         System.out.println("Your balance is " + balance);
         return balance;
@@ -70,7 +74,7 @@ abstract class BankAccount implements BankOperations {
         withdrawal(amount);
     }
 
-
+//    Show account details
     public String showInfo() {
         return "Account No: " + accountNumber + "\nName: " + accountName + "\nBalance: " + balance;
     }
